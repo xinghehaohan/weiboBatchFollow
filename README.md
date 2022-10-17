@@ -16,8 +16,8 @@
 > - 由于接口限制可能无法获得完整的关注列表
 
 ```javascript
-(() => {
-	const follows = []
+
+	var follows = []
 	const sleep = time => () => new Promise(resolve => setTimeout(resolve, time))
 	const query = page =>
 		fetch(
@@ -32,10 +32,15 @@
 				data.cards.forEach(group => group.card_group.forEach(card => card.user && follows.push(card.user.id)))
 			})
 	const polling = (page = 1) => query(page).then(sleep(1500)).then(() => polling(page + 1))
-
+	
 	polling()
+		.then(()=>{console.log(floows) })
 		.catch(error => console.warn(`${error.message === 'finish' ? '获取完成' : `出错了 (${error.message})` }\n\n${JSON.stringify(follows)}`))
-})()
+	
+	### follows是你的关注列表的用户id,复制follows，添加关注时会使用⬇️
+
+	
+
 ```
 
 ### 按列表为 B 账号添加关注
