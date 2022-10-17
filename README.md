@@ -36,12 +36,9 @@
 	polling()
 		.then(()=>{console.log(floows) })
 		.catch(error => console.warn(`${error.message === 'finish' ? '获取完成' : `出错了 (${error.message})` }\n\n${JSON.stringify(follows)}`))
-	
-	### follows是你的关注列表的用户id,复制follows，添加关注时会使用⬇️
-
-	
 
 ```
+### follows是你的关注列表的用户id,复制follows，添加关注时会使用⬇️
 
 ### 按列表为 B 账号添加关注
 1. 前往 PC 版首页 ([www.weibo.com](https://www.weibo.com))
